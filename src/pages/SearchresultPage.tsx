@@ -18,7 +18,7 @@ export default function SearchresultPage() {
     
   return (
     <div className=''>
-          <form action=""onSubmit={handleSearch}>
+          <form role="form" action=""onSubmit={handleSearch}>
               <div className='flex items-center border rounded-md px-5'>
               <input
                   type="text"
@@ -33,9 +33,9 @@ export default function SearchresultPage() {
           </form>
       <h2 className='font-nunito'>Search results</h2>
           
-          <div className="mt-[50px] h-[600px] overflow-y-scroll w-full no-scrollbar">
+          <div data-testid="results" className="mt-[50px] h-[600px] overflow-y-scroll w-full no-scrollbar">
               {
-                  articles?.map((article, index)=> <Result key={index} article={article} loading={loading} />)
+                  articles?.map((article, index)=> <Result  key={index} article={article} loading={loading} />)
               }
           </div>
     </div>
