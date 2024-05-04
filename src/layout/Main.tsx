@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import Navbar from '../components/shared/Navbar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 export default function Main() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/search');
+  }, []);
   return (
     <div>
       <Navbar />

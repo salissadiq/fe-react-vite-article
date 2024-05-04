@@ -4,7 +4,7 @@ const useFetchArticles = () => {
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
 
-  const fetchArticles = async (query:string) => {
+  const fetchArticles = async (query: string) => {
     setLoading(true);
     try {
       const response = await fetch(`https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=7cc1cb81583e40848c40b32ad061a385`);

@@ -16,6 +16,7 @@ export default function Result({ article, loading }: articleProps) {
     if (content == '[Removed]') return null;
     else return content.replace(/\[\+\d+ chars\]/g, '');
   };
+
   return (
     <>
       {loading ? (
@@ -29,7 +30,9 @@ export default function Result({ article, loading }: articleProps) {
           ))}
         </div>
       ) : (
-        <div className="my-5 border rounded-md px-5 py-2 font-nunito">
+        <div
+          className={`${!removeExtraChars(article?.content) ? 'hidden' : ''} my-5 border rounded-md px-5 py-2 font-nunito`}
+        >
           <h2 className=" font-semibold text-lg">{article?.author}</h2>
           <h3 className="font-medium">{article?.title}</h3>
           <p className="font-light text-sm">

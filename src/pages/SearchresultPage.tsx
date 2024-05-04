@@ -1,7 +1,7 @@
 import { IoSearchOutline } from 'react-icons/io5';
 
 import Result from '../components/Search/Result';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useFetchArticles from '../hooks/useFetchArticles';
 
@@ -12,6 +12,10 @@ export default function SearchresultPage() {
     e.preventDefault();
     fetchArticles(query);
   };
+
+  useEffect(() => {
+    fetchArticles('programming');
+  }, []);
 
   return (
     <div className="">
@@ -30,12 +34,17 @@ export default function SearchresultPage() {
           </button>
         </div>
       </form>
-      <h2 className="font-nunito">Search results</h2>
 
       <div
         data-testid="results"
         className="mt-[50px] h-[600px] overflow-y-scroll w-full no-scrollbar"
       >
+        {articles.length > 0 && (
+          <h2 className="font-nunito">
+            Search results: {articles.length} found
+          </h2>
+        )}
+        <h2 className="font-nunito"></h2>
         {articles?.map((article, index) => (
           <Result key={index} article={article} loading={loading} />
         ))}
