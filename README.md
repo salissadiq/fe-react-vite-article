@@ -104,7 +104,7 @@ handleSearch('Leanne Graham');
 
 // Call handleSearch function with post title
 handleSearch('sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
-
+```
 ## Search Keyword Examples
 
 You can use the following keywords as examples when searching for user data or posts:
