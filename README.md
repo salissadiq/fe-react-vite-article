@@ -15,7 +15,7 @@ Article Fetcher is a front-end React application built using Vite. It consists o
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Documentation](#Documentation)
-- [Search-Keyword-Examples](#Search)
+- [Search-Keyword-Examples](#search-keyword-examples)
 
 ## Installation
 
