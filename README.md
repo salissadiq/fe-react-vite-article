@@ -58,7 +58,7 @@ To use Article Fetcher, follow these steps:
 * Vite
 * Vitest
 * React Router Dom
-* React Hook Form
+* React Hook Forms
 * JSONPlaceholder API
 * NewsAPI
 * ESLint
