@@ -7,15 +7,16 @@ import useFetchArticles from '../hooks/useFetchArticles';
 
 export default function SearchresultPage() {
   const [query, setQuery] = useState('');
-  const { loading, articles, fetchArticles } = useFetchArticles();
+  const { loading, articles, fetchArticles, user } = useFetchArticles();
   const handleSearch = async (e: any) => {
     e.preventDefault();
     fetchArticles(query);
   };
 
   useEffect(() => {
-    fetchArticles('programming');
+    fetchArticles('Leanne Graham');
   }, []);
+  console.log(articles, user);
 
   return (
     <div className="">
@@ -39,14 +40,14 @@ export default function SearchresultPage() {
         data-testid="results"
         className="mt-[50px] h-[600px] overflow-y-scroll w-full no-scrollbar"
       >
-        {articles.length > 0 && (
+        {articles?.length > 0 && (
           <h2 className="font-nunito">
-            Search results: {articles.length} found
+            Search results: {articles?.length} found
           </h2>
         )}
         <h2 className="font-nunito"></h2>
         {articles?.map((article, index) => (
-          <Result key={index} article={article} loading={loading} />
+          <Result key={index} article={article} loading={loading} user={user} />
         ))}
       </div>
     </div>

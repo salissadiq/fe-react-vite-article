@@ -14,6 +14,8 @@ Article Fetcher is a front-end React application built using Vite. It consists o
 - [Usage](#usage)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Documentation](#Documentation)
+- [Search-Keyword-Examples](#Search-Keyword-Examples)
 
 ## Installation
 
@@ -63,5 +65,63 @@ To use Article Fetcher, follow these steps:
 * NewsAPI
 * ESLint
 * Prettier
+
+## Documentation
+
+### `useFetchArticles(query: string): Promise<{ user: Object, posts: Array<Object> } | null>`
+
+This Hook fetches user data and articles based on the provided query. If the query matches a user's name, it fetches the posts for that user. If the query matches an article title, it fetches the user data of the user who authored that article, along with the article.
+
+#### Parameters
+
+- `query` (string): The search query, which can be either a user's name or a article title.
+
+#### Returns
+
+A Promise that resolves to an object containing the user and articles data if found, or `null` if no user or articles are found with the specified query.
+
+```javascript
+// Example usage from a frontend component
+async function handleSearch(query) {
+  try {
+    const userData = await fetchUserData(query);
+    if (userData) {
+      console.log('User:', userData.user);
+      console.log('Posts:', userData.posts);
+      // Update UI with user and posts data
+    } else {
+      console.log('No user or posts found for the specified query');
+      // Display error message on UI
+    }
+  } catch (error) {
+    console.error('Error:', error.message);
+    // Display error message on UI
+  }
+}
+
+// Call handleSearch function with user's name
+handleSearch('Leanne Graham');
+
+// Call handleSearch function with post title
+handleSearch('sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
+
+## Search Keyword Examples
+
+You can use the following keywords as examples when searching for user data or posts:
+
+- **User's Name:**
+  - Leanne Graham
+  - Ervin Howell
+  - Clementine Bauch
+  - Patricia Lebsack
+  - Chelsey Dietrich
+
+- **Post Titles:**
+  - sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+  - qui est esse
+  - ea molestias quasi exercitationem repellat qui ipsa sit aut
+  - eum et est occaecati
+  - nesciunt quas odio
+
 
 

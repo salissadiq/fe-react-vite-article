@@ -6,12 +6,13 @@ type articleProps = {
     publishedAt: string;
     author: string;
     title: string;
-    content: string;
+    body: string;
   };
   loading: boolean;
+  user: any;
 };
-export default function Result({ article, loading }: articleProps) {
-  console.log(article, loading);
+export default function Result({ article, user, loading }: articleProps) {
+  console.log(article, loading, user, '><><><><><><><><>');
   const removeExtraChars = (content: string) => {
     if (content == '[Removed]') return null;
     else return content.replace(/\[\+\d+ chars\]/g, '');
@@ -30,13 +31,11 @@ export default function Result({ article, loading }: articleProps) {
           ))}
         </div>
       ) : (
-        <div
-          className={`${!removeExtraChars(article?.content) ? 'hidden' : ''} my-5 border rounded-md px-5 py-2 font-nunito`}
-        >
-          <h2 className=" font-semibold text-lg">{article?.author}</h2>
-          <h3 className="font-medium">{article?.title}</h3>
+        <div className={`my-5 border rounded-md px-5 py-2 font-nunito`}>
+          <h2 className=" font-semibold text-lg my-2">{user?.name}</h2>
+          <h3 className="font-medium my-1">{article?.title}</h3>
           <p className="font-light text-sm">
-            {removeExtraChars(article?.content)}
+            {removeExtraChars(article?.body)}
           </p>
         </div>
       )}
