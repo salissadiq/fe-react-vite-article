@@ -1,30 +1,67 @@
-# React + TypeScript + Vite
+# Article Fetcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Article Fetcher is a front-end React application built using Vite. It consists of two main pages:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Results Page**: Allows users to search for existing articles by author name or title using a single input and a search button.
 
-## Expanding the ESLint configuration
+2. **Article Creation Page**: Provides a form connected to JSONPlaceholder. The form includes client-side validation and allows users to submit a new article with author details.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Table of Contents
 
-- Configure the top-level `parserOptions` property like this:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Installation
+
+To get started with the project, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/salissadiq/fe-react-vite-article.git
+cd fe-react-vite-article
+npm install
+npm run dev
+
 ```
+## Usage
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To use Article Fetcher, follow these steps:
+
+1. Open the application in your web browser.
+2. Navigate to the Results Page to search for articles by author name or title.
+3. Use the search input field to enter the author name or article title you want to search for.
+4. Click the search button to initiate the search.
+5. View the search results on the Results Page.
+6. Navigate to the Article Creation Page to submit a new article.
+7. Fill out the form with the article details and personal information.
+8. Ensure that all form inputs are valid based on the client-side validation.
+9. Click the submit button to submit the article.
+
+
+## Features
+
+* **Results Page**: Users can search for articles by author name or title.
+* **Article Creation Page**: Users can submit articles along with personal information.
+* **Client-side Validation**: Form inputs are validated on the client side.
+* **React Router**: Navigation is handled using React Router.
+* **Unit Testing**: Unit tests are included using Vitest or Jest.
+
+
+## Technologies Used
+
+* React
+* Vite
+* Vitest
+* React Router Dom
+* React Hook Form
+* JSONPlaceholder API
+* NewsAPI
+* ESLint
+* Prettier
+
+
